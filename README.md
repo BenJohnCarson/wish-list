@@ -40,6 +40,8 @@ My first step when starting this challenge was to get a blank piece of paper and
 Next I scanned through the ideas and tried to pick one I thought I could turn into an interesting feature in a small amount of time.
 The idea I settled on was a wish list for a current account. From here I began fleshing my idea by creating several user stories which can be found below.
 
+![Alt text](/assets/wish_list_sequence_diagram.ufx)
+
 ## <a name="Stories">User Stories</a>
 ```
 As a current account customer,
