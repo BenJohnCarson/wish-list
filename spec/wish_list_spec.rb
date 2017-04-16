@@ -1,3 +1,5 @@
+require 'wish_list'
+
 describe Wish_list do
   subject(:list)  { described_class.new }
   
