@@ -16,6 +16,8 @@ Using any language of your choice, implement some interesting fragment of one of
 * a shopping basket
 * a social network
 
+I decided to create a wish list of items that could be integrated with a current account to provide motivation for saving and notifying when saving goals have been reached.
+
 ## <a name="Install">Installation</a>
 * Clone from github
 ```
