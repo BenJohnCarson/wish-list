@@ -12,4 +12,8 @@ class Wish_list
   def add_wish(name, price)
     wishes << wish.new(name, price)
   end
+  
+  def remove_wish(name)
+    wishes.delete_if { |wish| wish.name == name }
+  end
 end
