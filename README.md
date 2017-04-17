@@ -112,3 +112,5 @@ Following completetion of the basic MVP, there a few things I'd like to do to ex
 * Allow ordering of the list, so the customer can choose which item they'd like to save for first
 * Implement a sorting function that can return the list sorted by user defined property (e.g. price descending)
 * Assuming the list can be hooked up to a savings account, allow realtime notifications (by text/email) of when you've saved enough to afford an item on your list
+* Add a fully functioning interface and presentation layer for use on the command line
+* Extract error messages out into a seperate errors class that inherits from ruby's StandardError

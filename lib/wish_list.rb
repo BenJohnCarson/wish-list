@@ -16,6 +16,7 @@ class Wish_list
   
   def add_wish(name, price)
     fail "Wish with that name already exists" if name_exists?(name)
+    check_price_type(price)
     wishes << wish.new(name, price)
   end
   
@@ -24,13 +25,24 @@ class Wish_list
   end
   
   def edit_wish(args)
-    wish_name = args.fetch(:wish_name)
-    get_wish(wish_name).edit_property(args.fetch(:property), args.fetch(:value))
+    wish_name = args[:wish_name]
+    property = args[:property]
+    value = args[:value]
+    check_price_type(value) if property == "price"
+    get_wish(wish_name).edit_property(property, value)
+  end
+  
+  def affordable_wishes(savings)
+    wishes.select { |wish| wish.price <= savings }
   end
   
   private
   
   def name_exists?(name)
     wishes.collect { |wish| wish.name }.include?(name)
+  end
+  
+  def check_price_type(value)
+     raise "Price should be an integer" unless value.is_a? Integer
   end
 end

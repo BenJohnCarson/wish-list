@@ -42,5 +42,11 @@ describe 'Wish List' do
       wish = list.get_wish("Guitar")
       expect(wish.price).to eq 350
     end
+    
+    it "returns wishes you can afford" do
+      add_watch
+      wish = list.get_wish("Guitar")
+      expect(list.affordable_wishes(500)).to eq [wish]
+    end
   end
 end
