@@ -14,6 +14,11 @@ describe 'Wish List' do
       add_guitar
     end
     
+    it "can find an specific wish" do
+      wish = list.wishes[0]
+      expect(list.get_wish("Guitar")).to eq wish
+    end
+    
     it "contains a guitar with a price" do
       wish = list.wishes.pop
       expect(wish.name).to eq "Guitar"
@@ -26,6 +31,16 @@ describe 'Wish List' do
       expect(list.wishes.length).to eq 1
       wish = list.wishes.pop
       expect(wish.name).to eq "Guitar"
+    end
+    
+    it "can edit a wish" do
+      edit_params = { wish_name: "Guitar",
+                      property: "price",
+                      value: 350
+      }
+      list.edit_wish(edit_params)
+      wish = list.get_wish("Guitar")
+      expect(wish.price).to eq 350
     end
   end
 end
