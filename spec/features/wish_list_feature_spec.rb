@@ -11,4 +11,7 @@ describe 'Wish List' do
     expect(wish.name).to eq "Guitar"
     expect(wish.price).to eq 400
   end
+  
+  it "can remove a wish" do
+  end
 end
