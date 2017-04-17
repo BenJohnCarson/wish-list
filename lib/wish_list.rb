@@ -2,7 +2,7 @@ require_relative 'wish'
 
 class Wish_list
   
-  attr_reader :wishes, :wish
+  attr_reader :wishes
   
   def initialize(wish = Wish)
     @wishes = []
@@ -45,4 +45,8 @@ class Wish_list
   def check_price_type(value)
      raise "Price should be an integer" unless value.is_a? Integer
   end
+  
+  private
+  
+  attr_reader :wish
 end

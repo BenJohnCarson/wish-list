@@ -19,6 +19,8 @@
 
 require 'wish_list'
 require 'wish'
+require 'interface'
+require 'printer'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

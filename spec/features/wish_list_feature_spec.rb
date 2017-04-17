@@ -1,4 +1,4 @@
-describe 'Wish List' do
+describe 'Wish List Features' do
   subject(:list)  { Wish_list.new }
   
   let(:add_guitar)  { list.add_wish("Guitar", 400) }

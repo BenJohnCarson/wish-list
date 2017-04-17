@@ -12,9 +12,9 @@
 ## <a name="Task">Task</a>
 Using any language of your choice, implement some interesting fragment of one of the following concepts:
 
-• a current account
-• a shopping basket
-• a social network
+* a current account
+* a shopping basket
+* a social network
 
 ## <a name="Install">Installation</a>
 * Clone from github
@@ -45,27 +45,31 @@ $ irb
 ```
 * Require the wish_list file
 ```
-> require './lib/wish_list'
+> require './lib/interface'
 ```
 * Create a new list
 ```
-> list = Wish_list.new
+> list = Interface.new
 ```
 * Add a wish
 ```
-> list.add_wish("Guitar", 400)
+> list.add("Guitar", 400)
 ```
 * Retrieve a wish
 ```
-> list.get_wish("Guitar")
+> list.find("Guitar")
 ```
 * Edit a wish
 ```
-> list.edit_wish({wish_name: "Guitar", property: "name", value: "Bass"})
+> list.edit("Guitar", "name", "Bass")
+```
+* Find wishes you can afford
+```
+> list.affordable_wishes(500)
 ```
 * Remove a wish
 ```
-> list.remove_wish("Guitar")
+> list.remove("Guitar")
 ```
 
 ## <a name="Approach">Approach</a>
