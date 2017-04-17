@@ -7,6 +7,7 @@
 * [Usage](#Usage)
 * [Approach](#Approach)
 * [User Stories](#Stories)
+* [Extensions](#Extensions)
 
 ## <a name="Task">Task</a>
 Using any language of your choice, implement some interesting fragment of one of the following concepts:
@@ -32,7 +33,40 @@ $ gem install bundler
 $ bundle
 ```
 
+* Running tests
+```
+$ rspec
+```
+
 ## <a name="Usage">Usage</a>
+* Open irb in the project root folder
+```
+$ irb
+```
+* Require the wish_list file
+```
+> require './lib/wish_list'
+```
+* Create a new list
+```
+> list = Wish_list.new
+```
+* Add a wish
+```
+> list.add_wish("Guitar", 400)
+```
+* Retrieve a wish
+```
+> list.get_wish("Guitar")
+```
+* Edit a wish
+```
+> list.edit_wish({wish_name: "Guitar", property: "name", value: "Bass"})
+```
+* Remove a wish
+```
+> list.remove_wish("Guitar")
+```
 
 ## <a name="Approach">Approach</a>
 ### Planning
@@ -53,6 +87,11 @@ The interface would also have a printer class that would return the correct conf
 This would allow proper separation of model, view and controller and by keeping any presentation information out of wish_list it allows it to be inserted into any interface.
 However, having done this I realised that the presentation was not the most interesting feature and so in the interest of time I'd assume that my wish_list would be hooked up to an interface at a later date and that I'd continue working on more novel features.
 
+From here I carried on implementing the basic features remove and get wish. 
+The edit_wish method proved to require a little extra thought. I wanted to implement it so that if the wish were to have additional properties added to it in the future (e.g. order value), I wouldn't have to come back and change the edit method.
+
+
+
 ### Domain Model Diagram with Interface
 ![Alt text](/assets/wish_list_domain.png)
 
@@ -63,7 +102,13 @@ So I can motivate myself to start saving,
 I'd like to have a list of things I wish to purchase, that I can edit.
 
 As a current account customer,
-So I know when I can afford to buy something on my wish list,
-I'd like to track my spending so I know how much I've saved each month.
+So I know when I can afford to treat myself,
+I'd like to see which items on my wish list I can currently afford.
 ```
 
+## <a name="Extensions">Extensions</a>
+Following completetion of the basic MVP, there a few things I'd like to do to extend the feature:
+
+* Allow ordering of the list, so the customer can choose which item they'd like to save for first
+* Implement a sorting function that can return the list sorted by user defined property (e.g. price descending)
+* Assuming the list can be hooked up to a savings account, allow realtime notifications (by text/email) of when you've saved enough to afford an item on your list

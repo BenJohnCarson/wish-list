@@ -29,16 +29,20 @@ describe Wish_list do
       expect{ add_guitar }.to change { list.wishes.length }.by 1
     end
     
-    it "takes a name and a price" do
-      add_guitar
-      wish = list.get_wish("Guitar")
-      expect(wish.name).to eq "Guitar"
-      expect(wish.price).to eq 400
-    end
+    context "guitar has been added" do
+      before do
+        add_guitar
+      end
     
-    it "errors if there's a wish with the same name already present" do
-      add_guitar
-      expect{ list.add_wish("Guitar", 400) }.to raise_error "Wish with that name already exists"
+      it "takes a name and a price" do
+        wish = list.get_wish("Guitar")
+        expect(wish.name).to eq "Guitar"
+        expect(wish.price).to eq 400
+      end
+      
+      it "errors if there's a wish with the same name already present" do
+        expect{ list.add_wish("Guitar", 400) }.to raise_error "Wish with that name already exists"
+      end
     end
   end
   

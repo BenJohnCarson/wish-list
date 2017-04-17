@@ -14,13 +14,13 @@ describe 'Wish List' do
       add_guitar
     end
     
-    it "can find an specific wish" do
+    it "can find a specific wish" do
       wish = list.wishes[0]
       expect(list.get_wish("Guitar")).to eq wish
     end
     
     it "contains a guitar with a price" do
-      wish = list.wishes.pop
+      wish = list.get_wish("Guitar")
       expect(wish.name).to eq "Guitar"
       expect(wish.price).to eq 400
     end
